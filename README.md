@@ -1,6 +1,6 @@
 # DOG HOUSE
 #### Video Demo:  <https://www.youtube.com/watch?v=dEWMa9YfDxM>
-#### Description: This is a web application related to dogs. The search for a suitable dog breed, the training videos and links to the next things you could buy for the dog. Admin access or registered users can also add dog breeds into the database to give other users an option.
+#### Description: This is a web application related to dogs. The search for a suitable dog breed, the training videos and links to the next things you could buy for the dog. Admin access or registered users can also add dog breeds into the database to give other users an option. Most importantly, this is just an idea and preliminary work had been done. 
 
 **Templates**
 I created a HTML page for each of the following,
