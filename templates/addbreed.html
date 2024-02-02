@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <style>
+            /* Add custom styles for the image */
+            body {
+                margin: 0; /* Remove default margin */
+                padding: 0; /* Remove default padding */
+            }
+
+            img {
+                width: 100%; /* Make the image take up the full width of its container */
+                height: auto; /* Maintain the image's aspect ratio */
+                display: block; /* Remove any default inline styling */
+            }
+
+        </style>
+
+        <title>Dog House</title>
+
+    </head>
+    <body>
+        <nav class="bg-light border navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/indexafterlogin"><span class="red">Dog House Entry</span></a>
+                <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav ms-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/addbreed">Add a Breed</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/choosedog">Choose a Dog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/traindog">Train a Dog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/buydogstuff">Buy Dog Stuff</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log out</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h1 class="text-center mb-4">Add a Breed</h1>
+                    <form action="/addbreed" method="post">
+
+                        <!-- Dog Information -->
+                        <div class="mb-3">
+                            <label for="breed" class="form-label">Breed:</label>
+                            <input type="text" class="form-control" id="breed" name="breed" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="size" class="form-label">Adult Size:</label>
+                            <select class="form-select" id="size" name="size" required>
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Large</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="temperament" class="form-label">Temperament:</label>
+                            <select class="form-select" id="temperament" name="temperament" required>
+                                <option value="highly protective">Highly Protective</option>
+                                <option value="moderately protective">Moderate Protective</option>
+                                <option value="fairly friendly">Fairly friendly</option>
+                                <option value="loves everyone">Loves Everyone</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="activitylevel" class="form-label">Activity Level:</label>
+                            <select class="form-select" id="activitylevel" name="activitylevel" required>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="large">Low</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="sheddinglevel" class="form-label">Shedding Level:</label>
+                            <select class="form-select" id="sheddinglevel" name="sheddinglevel" required>
+                                <option value="minimal">Minimal</option>
+                                <option value="moderate">Moderate</option>
+                                <option value="heavy">Heavy</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="groomingneeds" class="form-label">Grooming Needs:</label>
+                            <select class="form-select" id="groomingneeds" name="groomingneeds" required>
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="traininglevel" class="form-label">Training Level:</label>
+                            <select class="form-select" id="traininglevel" name="traininglevel" required>
+                                <option value="none">None</option>
+                                <option value="basic">Basic</option>
+                                <option value="advance">Advance</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="compatibilitywithchildren" class="form-label">Compatible with Children:</label>
+                            <select class="form-select" id="compatibilitywithchildren" name="compatibilitywithchildren" required>
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="compatibilitywithotherpets" class="form-label">Compatible with Other Pets:</label>
+                            <select class="form-select" id="compatibilitywithotherpets" name="compatibilitywithotherpets" required>
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="playspace" class="form-label">Play Space:</label>
+                            <select class="form-select" id="playspace" name="playspace" required>
+                                <option value="within_apartment">Within Apartment</option>
+                                <option value="backyard">Backyard</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="firsttimepawrents" class="form-label">First Time Owners:</label>
+                            <select class="form-select" id="firsttimepawrents" name="firsttimepawrents" required>
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="timealone" class="form-label">Max Time Alone for Dog:</label>
+                            <select class="form-select" id="timealone" name="timealone" required>
+                                <option value="4">4hr</option>
+                                <option value="8">8hr</option>
+                                <option value="12">12hr</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="imageURL" class="form-label">Public Image URL of Dog:</label>
+                            <input type="text" class="form-control" id="imageURL" name="imageURL" required>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary">Add Breed</button>
+                    </form>
+    </body>
